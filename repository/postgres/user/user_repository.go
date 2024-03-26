@@ -6,8 +6,7 @@ import (
 )
 
 type UserRepository interface {
-	Register() (dto.UserInfo, error)
-	//Login() (dto.UserInfo, error)
+	Insert() (dto.UserInfo, error)
 	//Update() (dto.UserInfo, error)
 
 	//IsMobileUnique() (bool, error)
@@ -26,6 +25,6 @@ func New(conn *postgres.PostgresqlDB) *UserRepositoryImpl {
 	}
 }
 
-func (this *UserRepositoryImpl) Register() (dto.UserInfo, error) {
+func (this *UserRepositoryImpl) Insert() (dto.UserInfo, error) {
 	return dto.UserInfo{Mobile: "0900000000000000"}, nil
 }
